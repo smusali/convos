@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "types": [
+    "node",
+    "@types/express",
+    "@types/multer",
+    "@types/json2csv"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
+}
