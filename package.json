@@ -4,8 +4,10 @@
   "description": "Backend Engineering Challenge for Siena AI",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/server.ts",
-    "test": "tap"
+    "clean": "rm -rf ./node_modules/ package-lock.json",
+    "lint": "eslint .",
+    "pre-test": "npm run lint",
+    "start": "ts-node ./src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -49,6 +51,15 @@
     "pg": "^8.10.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "typescript": "^5.0.2"
   }
 }

@@ -1,14 +1,24 @@
-import app from './app';
+import app from './app'
 
-async function init(): Promise<void> {
+async function init (): Promise<void> {
   try {
-    app.listen(3001, () => {
-      console.log('Express App Listening on Port 3001');
-    });
+    await new Promise((resolve, reject) => {
+      app.listen(3001, (error: any) => {
+        if (error !== undefined) {
+          reject(error)
+        } else {
+          resolve()
+        }
+      })
+    })
+    console.log('Express App Listening on Port 3001')
   } catch (error) {
-    console.error(`An error occurred: ${JSON.stringify(error)}`);
-    process.exit(1);
+    console.error(`An error occurred: ${JSON.stringify(error)}`)
+    process.exit(1)
   }
 }
 
-init();
+init().catch((error: any) => {
+  console.error(`An error occurred while initializing the app: ${JSON.stringify(error)}`)
+  process.exit(1)
+})
