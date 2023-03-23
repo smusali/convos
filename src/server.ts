@@ -3,12 +3,8 @@ import app from './app'
 async function init (): Promise<void> {
   try {
     await new Promise((resolve, reject) => {
-      app.listen(3001, (error: any) => {
-        if (error !== undefined) {
-          reject(error)
-        } else {
-          resolve()
-        }
+      app.listen(3001, () => {
+        console.log('Express App Listening on Port 3001')
       })
     })
     console.log('Express App Listening on Port 3001')

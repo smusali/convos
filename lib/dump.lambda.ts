@@ -1,18 +1,8 @@
 import type { S3Event, S3Handler } from 'aws-lambda'
 import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3'
-import { Pool } from 'pg'
+import Message from './model'
 
 const s3Client = new S3Client({ region: process.env.AWS_REGION })
-
-const dbConfig = {
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: Number(process.env.DB_PORT)
-}
-
-const pool = new Pool(dbConfig)
 
 const channelResponses: Record<string, string> = {
   instagram: 'Hey {{sender_username}}, I am doing great!',
@@ -47,7 +37,13 @@ const processCsv = async (csv: string): Promise<void> => {
     const response = getResponseForChannel(channel, senderUsername, receiverUsername)
 
     try {
-      await pool.query('INSERT INTO messages(sender_username, receiver_username, message, channel, response) VALUES ($1, $2, $3, $4, $5)', [senderUsername, receiverUsername, message, channel, response])
+      await Message.create({
+        senderUsername,
+        receiverUsername,
+        message,
+        channel,
+        response
+      })
     } catch (err) {
       console.error(`Failed to insert message into DB: ${JSON.stringify(err)}`)
     }
