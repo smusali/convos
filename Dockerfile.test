@@ -1,0 +1,13 @@
+FROM node:16
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY lib/*.ts ./lib/
+COPY src/*.ts ./src/
+COPY .eslint* ./
+
+RUN npm run clean
+RUN npm ci
+
+CMD [ "npm", "test" ]

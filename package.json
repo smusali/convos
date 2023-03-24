@@ -4,11 +4,12 @@
   "description": "Backend Engineering Challenge for Siena AI",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf ./node_modules/ package-lock.json",
+    "clean": "rm -rf ./node_modules/ ./uploads/",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
     "pre-test": "npm run lint",
-    "start": "ts-node ./src/server.ts"
+    "start": "ts-node ./src/server.ts",
+    "test": "npm run pre-test"
   },
   "repository": {
     "type": "git",
