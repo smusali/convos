@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY lib/*.ts ./lib/
 COPY src/*.ts ./src/
+COPY tsconfig.json ./
 
 RUN npm run clean
 RUN npm ci --production
