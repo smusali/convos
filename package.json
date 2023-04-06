@@ -1,7 +1,7 @@
 {
-  "name": "sienatest",
+  "name": "convos",
   "version": "0.0.1",
-  "description": "Backend Engineering Challenge for Siena AI",
+  "description": "Conversation Management Consumer Service API",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./node_modules/ ./uploads/",
@@ -13,11 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smusali/sienatest.git"
+    "url": "git+https://github.com/smusali/convos.git"
   },
   "keywords": [
-    "siena",
-    "sienaai",
     "backend",
     "test",
     "challenge",
@@ -35,9 +33,9 @@
   "author": "samir.musali@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smusali/sienatest/issues"
+    "url": "https://github.com/smusali/convos/issues"
   },
-  "homepage": "https://github.com/smusali/sienatest#readme",
+  "homepage": "https://github.com/smusali/convos#readme",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.295.0",
     "@types/aws-sdk": "^2.7.0",

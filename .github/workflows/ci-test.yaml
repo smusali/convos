@@ -11,6 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build Docker image
-        run: docker build -t test-sienatest . -f Dockerfile.test
+        run: docker build -t test-convos . -f Dockerfile.test
       - name: Run integration tests
-        run: docker run --rm test-sienatest
+        run: docker run --rm test-convos

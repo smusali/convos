@@ -1,6 +1,6 @@
-# Siena Test
+# Convos
 ## Description
-Backend Engineering Challenge for Siena AI
+Conversation Management Consumer Service API
 
 ## 1. CSV to AWS S3 Uploader API Endpoint
 This API endpoint allows users to upload a CSV file to an AWS S3 bucket. The CSV file should contain 1000 records in the specified format, and the uploaded CSV file is validated to ensure it adheres to the required format before being uploaded to S3.
@@ -261,4 +261,4 @@ is made.
 
 ### Questions?
 The easiest way to get our attention is to comment on an existing, or open a new
-[issue]('https://github.com/smusali/sienatest/issues').
+[issue]('https://github.com/smusali/convos/issues').
